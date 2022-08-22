@@ -9,5 +9,5 @@ SE Fall 2022 Homework 1 project
 - [@NehaKale](https://www.github.com/nehakale8)
 - [@RishikeshYelne](https://www.github.com/rishikesh-yelne)
 - [@VanshMehta]
-- [@RitwikVaidya]
+- [@RitwikVaidya](https://www.github.com/ritwik4690)
 
