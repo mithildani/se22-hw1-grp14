@@ -2,6 +2,7 @@
 
 SE Fall 2022 Homework 1 project
 
+![This is an image](https://img.shields.io/badge/purpose-Software_Engineering-blue)
 
 ## Authors
 
