@@ -1,4 +1,10 @@
+# Temp folder
+.vscode/
+.pytest_cache/
+*/__pycache__/
 
+# Environment folder
+.venv/
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
