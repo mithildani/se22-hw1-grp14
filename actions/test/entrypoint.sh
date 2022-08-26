@@ -1,4 +1,4 @@
 #!/bin/sh -l
 
-python setup.py install
+python3 setup.py install
 pytest
