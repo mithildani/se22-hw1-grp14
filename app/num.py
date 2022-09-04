@@ -1,5 +1,7 @@
+import math
+
 class Num:
-    def __init__(self, c: int = 0, s: string = ""):
+    def __init__(self, c: int = 0, s: str = ""):
         """
         Summarizes a stream of numbers
         """
@@ -7,10 +9,10 @@ class Num:
         self.at = c                                 # column position
         self.name = s                               # column name
         self.has = {}                               # kept data
-        self.lo = sys.maxint                        # lowest seen
-        self.high = sys.minint                      # highest seen
+        self.lo = -math.inf                         # lowest seen
+        self.high = math.inf                        # highest seen
         self.isSorted = true                        # no updates since last sort of data
-        self.w = -1 if self.name.endswith("-") else 1  # check if ending with '-', return -1 if true, 1 otherwise
+        self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
     
      def nums(self):
         if (!self.isSorted):
