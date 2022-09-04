@@ -11,7 +11,7 @@ class Num:
         self.has = {}                               # kept data
         self.lo = -math.inf                         # lowest seen
         self.high = math.inf                        # highest seen
-        self.isSorted = true                        # no updates since last sort of data
+        self.isSorted = True                        # no updates since last sort of data
         self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
     
      def nums(self):
