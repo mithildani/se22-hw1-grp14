@@ -10,7 +10,7 @@ class Num:
         self.lo = sys.maxint                        # lowest seen
         self.high = sys.minint                      # highest seen
         self.isSorted = true                        # no updates since last sort of data
-        self.w = -1 if self.s.endswith("-") else 1  # check if ending with '-', return -1 if true, 1 otherwise
+        self.w = -1 if self.name.endswith("-") else 1  # check if ending with '-', return -1 if true, 1 otherwise
     
      def nums(self):
         if (!self.isSorted):
