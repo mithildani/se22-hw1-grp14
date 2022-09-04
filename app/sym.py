@@ -1,3 +1,4 @@
+import math
 class Sym:
 
     def __init__(self, c: int = 0, s: str = ""):
