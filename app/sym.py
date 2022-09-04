@@ -18,12 +18,12 @@ class Sym:
             self.has[v] = 1+self.has.get(v, 0)
     
     def mid(self):
-    most = -1
-    mode = None
-    for k,v in self.has.items():
-        if v > most:
-            mode, most = k,v
-    return mode
+        most = -1
+        mode = None
+        for k,v in self.has.items():
+            if v > most:
+                mode, most = k,v
+        return mode
 
     def div(self):
         def fun(p):
@@ -32,4 +32,4 @@ class Sym:
         for i,j in self.has.items():
             if j>0:
                 e = e - fun(j/self.n)
-    return e
+        return e

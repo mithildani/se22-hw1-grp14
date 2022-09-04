@@ -14,10 +14,14 @@ class Num:
         self.isSorted = True                        # no updates since last sort of data
         self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
     
-     def nums(self):
-        if (!self.isSorted):
+    def nums(self):
+        if (not self.isSorted):
             self.has = sorted(self.has.items(), key=lambda x: x[1])     # sort the data first
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
 
     
+    def mid(self):
+
+        array = self.nums(self)
+        return len(array)//2
