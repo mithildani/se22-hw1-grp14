@@ -16,4 +16,4 @@ class Sym:
     def add(self, v):
         if v != "?":
             self.n = self.n+1
-            self.has[v] = 1+(self.has[v] or 0)
+            self.has[v] = 1+self.has.get(v, 0)
