@@ -24,7 +24,6 @@ class Num:
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
 
-<<<<<<< HEAD:app/num.py
     
     def per(self, t, p = 0.5):
         p = math.floor(p * len(t))
@@ -38,7 +37,6 @@ class Num:
         return ((self.per(a,0.9)-self.per(a,0.1))/2.58)
 
 
-=======
     def add(self, v):
         global the
         pos = None
@@ -56,7 +54,4 @@ class Num:
                 key = list(self.has.keys())[pos]
                 self.has[key] = int(v)
 
-    def mid(self):
-        array = self.nums()
-        return len(array)//2
->>>>>>> cb08e1dbf35284207767384adcf63e57843a55cd:app/objects/num.py
+c = Num()
