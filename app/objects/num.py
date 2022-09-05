@@ -46,8 +46,7 @@ class Num:
             self.high = v if v > self.high else self.high
             if len(self.has) < len(the.nums):
                 pos = 1 + len(self.has)
-            # TODO type error: math.inf is float, randint expects an int
-            elif random.randint(0, math.inf) < the.nums/self.n:
+            elif random.randint(0, the.nums) < the.nums/self.n:
                 pos = random.randint(0, len(self.has))
             if pos is not None:
                 self.isSorted = False
