@@ -1,7 +1,7 @@
 import math
 import random
 
-the = { }
+the = {}
 
 
 class Num:
@@ -31,11 +31,12 @@ class Num:
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
             self.high = v if v > self.high else self.high
-            if  len(self.has) < len(the.nums):
+            if len(self.has) < len(the.nums):
                 pos = 1 + len(self.has)
+            # TODO type error: math.inf is float, randint expects an int
             elif random.randint(0, math.inf) < the.nums/self.n:
                 pos = random.randint(0, len(self.has))
-            if pos not None:
+            if pos is not None:
                 self.isSorted = False
                 key = list(self.has.keys())[pos]
                 self.has[key] = int(v)
