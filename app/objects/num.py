@@ -1,4 +1,8 @@
 import math
+import random
+
+the = {}
+
 
 class Num:
     def __init__(self, c: int = 0, s: str = ""):
@@ -15,11 +19,12 @@ class Num:
         self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
     
     def nums(self):
-        if (not self.isSorted):
+        if not self.isSorted:
             self.has = sorted(self.has.items(), key=lambda x: x[1])     # sort the data first
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
 
+<<<<<<< HEAD:app/num.py
     
     def per(self, t, p = 0.5):
         p = math.floor(p * len(t))
@@ -33,3 +38,25 @@ class Num:
         return ((self.per(a,0.9)-self.per(a,0.1))/2.58)
 
 
+=======
+    def add(self, v):
+        global the
+        pos = None
+        if v != "?":
+            self.n = self.n + 1
+            self.lo = v if v < self.lo else self.lo
+            self.high = v if v > self.high else self.high
+            if len(self.has) < len(the.nums):
+                pos = 1 + len(self.has)
+            # TODO type error: math.inf is float, randint expects an int
+            elif random.randint(0, math.inf) < the.nums/self.n:
+                pos = random.randint(0, len(self.has))
+            if pos is not None:
+                self.isSorted = False
+                key = list(self.has.keys())[pos]
+                self.has[key] = int(v)
+
+    def mid(self):
+        array = self.nums()
+        return len(array)//2
+>>>>>>> cb08e1dbf35284207767384adcf63e57843a55cd:app/objects/num.py

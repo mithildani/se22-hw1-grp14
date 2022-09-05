@@ -1,4 +1,6 @@
 import math
+
+
 class Sym:
 
     def __init__(self, c: int = 0, s: str = ""):
@@ -20,16 +22,16 @@ class Sym:
     def mid(self):
         most = -1
         mode = None
-        for k,v in self.has.items():
+        for k, v in self.has.items():
             if v > most:
-                mode, most = k,v
+                mode, most = k, v
         return mode
 
     def div(self):
         def fun(p):
             return p*math.log(p)
         e = 0
-        for i,j in self.has.items():
-            if j>0:
+        for i, j in self.has.items():
+            if j > 0:
                 e = e - fun(j/self.n)
         return e
