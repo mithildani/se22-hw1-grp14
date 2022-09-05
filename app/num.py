@@ -21,7 +21,15 @@ class Num:
         return self.has
 
     
-    def mid(self):
+    def per(self, t, p = 0.5):
+        p = math.floor(p * len(t))
+        return t[max(1,min(len(t),p))]
 
-        array = self.nums(self)
-        return len(array)//2
+    def mid(self):
+        return self.per(self.nums(), 0.5)
+
+    def div(self):
+        a = self.nums()
+        return ((self.per(a,0.9)-self.per(a,0.1))/2.58)
+
+
