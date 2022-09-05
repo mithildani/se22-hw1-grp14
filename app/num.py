@@ -1,5 +1,6 @@
 import math
 
+
 class Num:
     def __init__(self, c: int = 0, s: str = ""):
         """
@@ -15,13 +16,11 @@ class Num:
         self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
     
     def nums(self):
-        if (not self.isSorted):
+        if not self.isSorted:
             self.has = sorted(self.has.items(), key=lambda x: x[1])     # sort the data first
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
-
     
     def mid(self):
-
-        array = self.nums(self)
+        array = self.nums()
         return len(array)//2
