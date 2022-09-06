@@ -1,7 +1,7 @@
 import math
 import random
 from app.utilities.lists import per
-the = {}
+from app.code import the
 
 
 class Num:
@@ -18,7 +18,6 @@ class Num:
         self.isSorted = True                        # no updates since last sort of data
         # check if ending with '-', return -1 if true, 1 otherwise
         self.w = -1 if s.endswith("-") else 1
-        self.the = {"nums": 512}
 
     def nums(self):
         if not self.isSorted:
@@ -35,17 +34,15 @@ class Num:
         a = self.nums()
         return ((per(a,0.9)-per(a,0.1))/2.58)
 
-
     def add(self, v):
         if v != "?":
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
             self.high = v if v > self.high else self.high
-            if len(self.has) < self.the["nums"]:
+            if len(self.has) < the["nums"]:
                 self.isSorted = False
                 self.has.append(int(v))
-            elif random.randint(0, self.the["nums"]) < self.the["nums"]/self.n:
+            elif random.randint(0, the["nums"]) < the["nums"]/self.n:
                 self.isSorted = False
                 pos = random.randint(0, len(self.has))
                 self.has[pos] = int(v)
-
