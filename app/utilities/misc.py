@@ -22,7 +22,7 @@ function obj(s,    t,i,new)
 # TODO: Write Python for above functions
 import math
 
-#Todo rogues 
+#TODO rogues 
 # def rogues():
 #   for k,v in ENV.items():
 #     if not b4[k]:
@@ -40,7 +40,7 @@ class obj:
     self.classname = self.__class__.__name__
 
   def __str__(self):
-    return self.classname #Todo o(x)
+    return self.classname #TODO o(x)
 
 
 
