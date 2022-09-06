@@ -4,7 +4,7 @@ import random
 the = {}
 
 
-class Num:
+class Num(obj):
     def __init__(self, c: int = 0, s: str = ""):
         """
         Summarizes a stream of numbers
