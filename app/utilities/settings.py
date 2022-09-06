@@ -17,15 +17,6 @@ OPTIONS:
  -s  --seed      random number seed                    = 10019
  -S  --seperator feild seperator                       = , ]]"""
 
-def __init__(self):
-	self.help = parseInput(self.help)
-
-def parseInput(self, input):
-	pattern = re.compile(r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)")
-	for k, x in re.findall(pattern, input):
-		self.the[k] = self.coerce(x)
-	return input
-
 def coerce(s):
 	"""
 	Parse `the` config settings from `help`.
@@ -33,6 +24,14 @@ def coerce(s):
 	if isinstance(s, int):
 		return int(s)
 	return False if re.match(s, "^\s*(.-)\s*$") is None else True
+
+def parseInput(input):
+	pattern = re.compile(r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)")
+	for k, x in re.findall(pattern, input):
+		the[k] = coerce(x)
+	return input
+
+help = parseInput(help)
 
 def cli(t):
 	"""
@@ -50,7 +49,7 @@ def cli(t):
 				else:
 					v = sys.argv[n + 1] 
 		t[slot] = coerce(v)
-	if t.help:
-		print("\n", t.help, "\n")
+	if t["help"]:
+		print("\n", t["help"], "\n")
 		return
 	return t
