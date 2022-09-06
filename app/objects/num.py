@@ -1,6 +1,6 @@
 import math
 import random
-
+from app.utilities.lists import per
 the = {}
 
 
@@ -24,6 +24,14 @@ class Num:
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
 
+    def mid(self):
+        return per(self.nums(), 0.5)
+
+    def div(self):
+        a = self.nums()
+        return ((per(a,0.9)-per(a,0.1))/2.58)
+
+
     def add(self, v):
         global the
         pos = None
@@ -39,7 +47,3 @@ class Num:
                 self.isSorted = False
                 key = list(self.has.keys())[pos]
                 self.has[key] = int(v)
-
-    def mid(self):
-        array = self.nums()
-        return len(array)//2
