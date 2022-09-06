@@ -1,7 +1,7 @@
 import math
 import random
 from app.utilities.lists import per
-the = {}
+from app.code import the
 
 
 class Num:
@@ -12,16 +12,19 @@ class Num:
         self.n = 0                                  # items seen
         self.at = c                                 # column position
         self.name = s                               # column name
-        self.has = {}                               # kept data
+        self.has = []                               # kept data
         self.lo = -math.inf                         # lowest seen
         self.high = math.inf                        # highest seen
         self.isSorted = True                        # no updates since last sort of data
-        self.w = -1 if s.endswith("-") else 1       # check if ending with '-', return -1 if true, 1 otherwise
-    
+        # check if ending with '-', return -1 if true, 1 otherwise
+        self.w = -1 if s.endswith("-") else 1
+
     def nums(self):
         if not self.isSorted:
-            self.has = sorted(self.has.items(), key=lambda x: x[1])     # sort the data first
-            self.isSorted = True                                        # mark the isSorted flag true after sorting
+            # sort the data first
+            self.has = sorted(self.has)
+            # mark the isSorted flag true after sorting
+            self.isSorted = True
         return self.has
 
     def mid(self):
@@ -31,19 +34,15 @@ class Num:
         a = self.nums()
         return ((per(a,0.9)-per(a,0.1))/2.58)
 
-
     def add(self, v):
-        global the
-        pos = None
         if v != "?":
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
             self.high = v if v > self.high else self.high
-            if len(self.has) < len(the.nums):
-                pos = 1 + len(self.has)
-            elif random.randint(0, the.nums) < the.nums/self.n:
-                pos = random.randint(0, len(self.has))
-            if pos is not None:
+            if len(self.has) < the["nums"]:
                 self.isSorted = False
-                key = list(self.has.keys())[pos]
-                self.has[key] = int(v)
+                self.has.append(int(v))
+            elif random.randint(0, the["nums"]) < the["nums"]/self.n:
+                self.isSorted = False
+                pos = random.randint(0, len(self.has))
+                self.has[pos] = int(v)
