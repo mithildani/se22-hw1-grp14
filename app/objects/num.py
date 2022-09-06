@@ -1,6 +1,6 @@
 import math
 import random
-
+from app.utilities.lists import per
 the = {}
 
 
@@ -24,6 +24,14 @@ class Num(obj):
             self.isSorted = True                                        # mark the isSorted flag true after sorting
         return self.has
 
+    def mid(self):
+        return per(self.nums(), 0.5)
+
+    def div(self):
+        a = self.nums()
+        return ((per(a,0.9)-per(a,0.1))/2.58)
+
+
     def add(self, v):
         global the
         pos = None
@@ -33,14 +41,9 @@ class Num(obj):
             self.high = v if v > self.high else self.high
             if len(self.has) < len(the.nums):
                 pos = 1 + len(self.has)
-            # TODO type error: math.inf is float, randint expects an int
-            elif random.randint(0, math.inf) < the.nums/self.n:
+            elif random.randint(0, the.nums) < the.nums/self.n:
                 pos = random.randint(0, len(self.has))
             if pos is not None:
                 self.isSorted = False
                 key = list(self.has.keys())[pos]
                 self.has[key] = int(v)
-
-    def mid(self):
-        array = self.nums()
-        return len(array)//2
