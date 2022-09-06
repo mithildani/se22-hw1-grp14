@@ -1,5 +1,7 @@
 import math
 import random
+from app.utilities.lists import per
+the = {}
 
 
 class Num:
@@ -26,6 +28,14 @@ class Num:
             self.isSorted = True
         return self.has
 
+    def mid(self):
+        return per(self.nums(), 0.5)
+
+    def div(self):
+        a = self.nums()
+        return ((per(a,0.9)-per(a,0.1))/2.58)
+
+
     def add(self, v):
         if v != "?":
             self.n = self.n + 1
@@ -38,8 +48,4 @@ class Num:
                 self.isSorted = False
                 pos = random.randint(0, len(self.has))
                 self.has[pos] = int(v)
-
-    def mid(self):
-        array = self.nums()
-        return len(array)//2
 

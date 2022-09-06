@@ -26,3 +26,7 @@ function csv(fname,fun,      sep,src,s,t)
       fun(t) end end end
 """
 # TODO: Write python for above code
+import math
+def per(t, p = 0.5):
+	p = math.floor(p * len(t))
+	return t[max(1,min(len(t),p))]
