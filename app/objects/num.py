@@ -4,7 +4,7 @@ from app.utilities.lists import per
 from app.code import the
 
 
-class Num:
+class Num(obj):
     def __init__(self, c: int = 0, s: str = ""):
         """
         Summarizes a stream of numbers
