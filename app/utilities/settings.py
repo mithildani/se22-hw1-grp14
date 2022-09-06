@@ -1,5 +1,10 @@
-""" Lua Code
-local help=[[
+import re
+import sys
+
+# Create a `the` variables
+the={}
+
+help="""[[
 CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
 USAGE: lua seen.lua [OPTIONS]
@@ -10,39 +15,41 @@ OPTIONS:
  -h  --help      show help                             = false
  -n  --nums      number of nums to keep                = 512
  -s  --seed      random number seed                    = 10019
- -S  --seperator feild seperator                       = , ]]
--- Function argument conventions:
--- 1. two blanks denote optionas, four blanls denote locals:
--- 2. prefix n,s,is,fun denotes number,string,bool,function;
--- 3. suffix s means list of thing (so names is list of strings)
--- 4. c is a column index (usually)
+ -S  --seperator feild seperator                       = , ]]"""
 
--- ### Handle Settings
-local the,coerce,cli
--- Parse `the` config settings from `help`.
-function coerce(s,    fun)
-  function fun(s1)
-    if s1=="true"  then return true end
-    if s1=="false" then return false end
-    return s1 end
-  return math.tointeger(s) or tonumber(s) or fun(s:match"^%s*(.-)%s*$") end
+def coerce(s):
+	"""
+	Parse `the` config settings from `help`.
+	"""
+	if isinstance(s, int):
+		return int(s)
+	return False if re.match(s, "^\s*(.-)\s*$") is None else True
 
--- Create a `the` variables
-the={}
-help:gsub("\n [-][%S]+[%s]+[-][-]([%S]+)[^\n]+= ([%S]+)",
-          function(k,x) the[k]=coerce(x) end)
+def parseInput(input):
+	pattern = re.compile(r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)")
+	for k, x in re.findall(pattern, input):
+		the[k] = coerce(x)
+	return input
 
--- Update settings from values on command-line flags. Booleans need no values
--- (we just flip the defeaults).
-function cli(t)
-  for slot,v in pairs(t) do
-    v = tostring(v)
-    for n,x in ipairs(arg) do
-      if x=="-"..(slot:sub(1,1)) or x=="--"..slot then
-        v = v=="false" and "true" or v=="true" and "false" or arg[n+1] end end
-    t[slot] = coerce(v) end
-  if t.help then os.exit(print("\n"..help.."\n")) end
-  return t end
-"""
+help = parseInput(help)
 
-# TODO: Write above code in python
+def cli(t):
+	"""
+	Update settings from values on command-line flags. Booleans need no values
+	(we just flip the defaults).
+	"""
+	for slot, v in t.items():
+		v = str(v)
+		for n, x in enumerate(sys.argv): 
+			if x == "-" + slot[0:1] or x == "--" + slot:
+				if v == "false":
+					v = "true"
+				elif v == "true":
+					v = "false"
+				else:
+					v = sys.argv[n + 1] 
+		t[slot] = coerce(v)
+	if t["help"]:
+		print("\n", t["help"], "\n")
+		return
+	return t
