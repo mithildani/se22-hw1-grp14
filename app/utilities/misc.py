@@ -31,7 +31,7 @@ import math
 def rnd(x,places):
   if not places:
     mult = 10**2
-  else
+  else:
     mult = 10**places
   return math.floor(x*mult+0.5) / mult
 
