@@ -1,7 +1,7 @@
 import math
+from app.utilities.misc import obj
 
-
-class Sym:
+class Sym(obj):
 
     def __init__(self, c: int = 0, s: str = ""):
         """
@@ -9,6 +9,7 @@ class Sym:
         :param c: column position
         :param s: column name
         """
+        super().__init__()
         self.n = 0      # items seen
         self.at = c     # column position
         self.name = s   # column name
