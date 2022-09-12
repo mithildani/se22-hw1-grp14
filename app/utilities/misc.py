@@ -19,4 +19,17 @@ function obj(s,    t,i,new)
   t.__index = t;return setmetatable(t,{__call=new}) end
 """
 
+from app.utilities.strings import o 
+class T:
+	def __init__(self, s):
+		self.s = s
+
+	def getter(self):
+		return self
+	
+	def toString(self,x):
+		return self.s + o(x)
+
+	
+
 # TODO: Write Python for above functions
