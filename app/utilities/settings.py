@@ -23,7 +23,7 @@ def coerce(s):
 	"""
 	if isinstance(s, int):
 		return int(s)
-	return False if re.match(s, "^\s*(.-)\s*$") is None else True
+	return False if re.match(s, "^\s*(.*)\s*$") is None else True
 
 def parseInput(input):
 	pattern = re.compile(r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)")
