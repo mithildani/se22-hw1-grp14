@@ -29,6 +29,7 @@ function csv(fname,fun,      sep,src,s,t)
 
 
 import math
+from copy import deepcopy
 import csv
 from app.utilities.settings import coerce
 
@@ -40,7 +41,7 @@ def per(t, p=0.5):
 def copy(t):
 	if type(t) is not dict:
 		return t
-	t_copy = t.copy()
+	t_copy = deepcopy(t)
 	return t_copy
 
 def csv_func(fname, fun, n):
