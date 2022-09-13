@@ -21,7 +21,7 @@ def per(t, p=0.5):
     return t[max(1, min(len(t), p))]
 
 
-def csv_func(fname, fun, n):
+def csv_func(fname, fun):
     with open(fname, mode='r')as file:
         s = list(csv.reader(file))
 
@@ -29,7 +29,7 @@ def csv_func(fname, fun, n):
         t = []
         for word in s[i]:
             t.append(coerce(word))
-        fun(t, n)
+        fun(t)
 
 # assuming t is a list
 def push(t,x):
