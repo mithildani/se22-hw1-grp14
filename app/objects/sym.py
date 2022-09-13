@@ -1,6 +1,7 @@
 import math
 from app.utilities.misc import obj
 
+
 class Sym(obj):
 
     def __init__(self, c: int = 0, s: str = ""):

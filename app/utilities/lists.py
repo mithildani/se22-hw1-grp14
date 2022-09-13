@@ -12,8 +12,16 @@ function copy(t,    u)
 
 
 import math
+from copy import deepcopy
 import csv
 from app.utilities.settings import coerce
+
+
+def copy(t):
+    if type(t) is not dict:
+        return t
+    t_copy = deepcopy(t)
+    return t_copy
 
 
 def per(t, p=0.5):
@@ -22,6 +30,7 @@ def per(t, p=0.5):
 
 
 def csv_func(fname, fun):
+  # TODO: Rename function, read without using csv library
     with open(fname, mode='r')as file:
         s = list(csv.reader(file))
 
