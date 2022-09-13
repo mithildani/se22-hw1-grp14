@@ -2,6 +2,8 @@
 .vscode/
 .pytest_cache/
 */__pycache__/
+app/objects/__pycache__/*
+app/utilities/__pycache__/*
 
 # Environment folder
 .venv/
