@@ -35,12 +35,6 @@ def rnd(x,places):
     mult = 10**places
   return math.floor(x*mult+0.5) / mult
 
-def copy(t):
-	if type(t) is not dict:
-		return t
-	t_copy = t.copy()
-	return t_copy
-
 class obj:
   def __init__(self):
     self.classname = self.__class__.__name__
