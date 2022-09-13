@@ -2,6 +2,7 @@ import math
 import random
 from app.utilities.lists import per
 from app.code import the
+from app.utilities.misc import obj
 
 
 class Num(obj):
@@ -32,7 +33,7 @@ class Num(obj):
 
     def div(self):
         a = self.nums()
-        return ((per(a,0.9)-per(a,0.1))/2.58)
+        return (per(a, 0.9) - per(a, 0.1)) / 2.58
 
     def add(self, v):
         if v != "?":
