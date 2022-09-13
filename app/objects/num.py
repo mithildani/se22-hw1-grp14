@@ -4,6 +4,7 @@ from app.utilities.lists import per
 from app.code import the
 from app.utilities.misc import obj
 
+
 class Num(obj):
     def __init__(self, c: int = 0, s: str = ""):
         """
