@@ -1,8 +1,10 @@
 import re
 import sys
 
+
 # Create a `the` variables
-the={}
+the = {}
+
 
 help="""[[
 CSV : summarized csv file
@@ -17,6 +19,7 @@ OPTIONS:
  -s  --seed      random number seed                    = 10019
  -S  --seperator feild seperator                       = , ]]"""
 
+
 def coerce(s):
 	"""
 	Parse `the` config settings from `help`.
@@ -29,13 +32,16 @@ def coerce(s):
 		else:
 			return re.compile(r"^\s*(.*)\s*$").search(s).group()
 
+
 def parseInput(input):
 	pattern = re.compile(r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)")
 	for k, x in re.findall(pattern, input):
 		the[k] = coerce(x)
 	return input
 
+
 help = parseInput(help)
+
 
 def cli(t):
 	"""

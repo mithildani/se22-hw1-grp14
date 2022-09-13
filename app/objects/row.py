@@ -6,8 +6,10 @@ function Row:new(t) return {cells=t,          -- one record
                        } end
 """
 from app.utilities.lists import copy
+from app.utilities.misc import obj
 
-class Row():
+
+class Row(obj):
     def __init__(self, t:dict):
         self.cells = t
         self.cooked = copy(t)

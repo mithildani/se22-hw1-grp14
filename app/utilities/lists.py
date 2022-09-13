@@ -34,17 +34,25 @@ import csv
 from app.utilities.settings import coerce
 
 
+def copy(t):
+    if type(t) is not dict:
+        return t
+    t_copy = deepcopy(t)
+    return t_copy
+
+
 def per(t, p=0.5):
     p = math.floor(p * len(t))
     return t[max(1, min(len(t), p))]
 
-def copy(t):
-	if type(t) is not dict:
-		return t
-	t_copy = deepcopy(t)
-	return t_copy
+
+def push():
+    # TODO: Implement
+    pass
+
 
 def csv_func(fname, fun, n):
+    # TODO: Rename function, read without using csv library
     with open(fname, mode='r')as file:
         s = list(csv.reader(file))
 

@@ -18,8 +18,6 @@ function obj(s,    t,i,new)
   t={__tostring = function(x) return s..o(x) end}
   t.__index = t;return setmetatable(t,{__call=new}) end
 """
-
-# TODO: Write Python for above functions
 import math
 
 #TODO rogues 
@@ -28,19 +26,21 @@ import math
 #     if not b4[k]:
 #       print("?", k, type(v))
 
-def rnd(x,places):
-  if not places:
-    mult = 10**2
-  else:
-    mult = 10**places
-  return math.floor(x*mult+0.5) / mult
+
+def rnd(x, places):
+    if not places:
+        mult = 10**2
+    else:
+        mult = 10**places
+    return math.floor(x*mult+0.5) / mult
+
 
 class obj:
-  def __init__(self):
-    self.classname = self.__class__.__name__
+    def __init__(self):
+        self.classname = self.__class__.__name__
 
-  def __str__(self):
-    return self.classname #TODO o(x)
+    def __str__(self):
+        return self.classname   # TODO +o(x)
 
 
 
