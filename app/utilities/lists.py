@@ -31,6 +31,7 @@ def csv_func(fname, fun, n):
             t.append(coerce(word))
         fun(t, n)
 
+# assuming t is a list
 def push(t,x):
   t.append(x)
   return x
