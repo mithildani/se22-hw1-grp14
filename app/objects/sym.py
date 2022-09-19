@@ -3,7 +3,6 @@ from app.utilities.misc import obj
 
 
 class Sym(obj):
-
     def __init__(self, c: int = 0, s: str = ""):
         """
         `Sym`s summarize a stream of symbols.
@@ -31,9 +30,9 @@ class Sym(obj):
 
     def div(self):
         def fun(p):
-            return p*math.log(p)
+            return p*math.log(p, 2)
         e = 0
-        for i, j in self.has.items():
+        for _, j in self.has.items():
             if j > 0:
                 e = e - fun(j/self.n)
         return e
