@@ -30,7 +30,7 @@ def per(t, p=0.5):
 
 
 def csv_func(fname, fun):
-  # TODO: Rename function, read without using csv library
+    # TODO: Rename function, read without using csv library
     with open(fname, mode='r')as file:
         s = list(csv.reader(file))
 
@@ -40,7 +40,8 @@ def csv_func(fname, fun):
             t.append(coerce(word))
         fun(t)
 
+
 # assuming t is a list
-def push(t,x):
-  t.append(x)
-  return x
+def push(t, x):
+    t.append(x)
+    return x

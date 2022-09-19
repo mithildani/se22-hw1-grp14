@@ -10,6 +10,7 @@ class Num(obj):
         """
         Summarizes a stream of numbers
         """
+        super().__init__()
         self.n = 0                                  # items seen
         self.at = c                                 # column position
         self.name = s                               # column name
@@ -21,6 +22,9 @@ class Num(obj):
         self.w = -1 if s.endswith("-") else 1
 
     def nums(self):
+        """
+        Return kept numbers, sorted.
+        """
         if not self.isSorted:
             # sort the data first
             self.has = sorted(self.has)
@@ -28,14 +32,13 @@ class Num(obj):
             self.isSorted = True
         return self.has
 
-    def mid(self):
-        return per(self.nums(), 0.5)
-
-    def div(self):
-        a = self.nums()
-        return (per(a, 0.9) - per(a, 0.1)) / 2.58
-
     def add(self, v):
+        """
+        Reservoir sampler. Keep at most `the.nums` numbers
+        (and if we run out of room, delete something old, at random).,
+        :param v:
+        :return:
+        """
         if v != "?":
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
@@ -47,3 +50,18 @@ class Num(obj):
                 self.isSorted = False
                 pos = random.randint(0, len(self.has))
                 self.has[pos] = int(v)
+
+    def div(self):
+        """
+        Diversity (standard deviation for Nums, entropy for Syms)
+        :return:
+        """
+        a = self.nums()
+        return (per(a, 0.9) - per(a, 0.1)) / 2.58
+
+    def mid(self):
+        """
+        Central tendency (median for Nums, mode for Syms)
+        :return:
+        """
+        return per(self.nums(), 0.5)

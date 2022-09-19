@@ -6,23 +6,25 @@ from app.utilities.misc import obj
 
 
 class Cols(obj):
-    def __init__(self, names, c: int = 0, s: str = ""):
-        self.names = names        # all column names
-        # all the columns (including the skipped ones)
-        self.all = []
-        # the single dependent klass column (if it exists)
-        self.klass = None
-        self.x = []               # independent columns (that are not skipped)
-        self.y = []               # depedent columns (that are not skipped)
+    def __init__(self, names):
+        """
+        -- `Columns` Holds of summaries of columns.
+        -- Columns are created once, then may appear in  multiple slots.
+        :param names:
+        """
+        super().__init__()
+        self.names = names          # all column names
+        self.all = []               # all the columns (including the skipped ones)
+        self.klass = None           # the single dependent klass column (if it exists)
+        self.x = []                 # independent columns (that are not skipped)
+        self.y = []                 # dependent columns (that are not skipped)
 
-        for c, s in obj:
+        for c, s in self.names:
             # Numerics start with Uppercase.
-            col = push(self.all, lambda c, s: Sym(c, s) if(
-                re.search(r"^A-Z", s) == None) else Num(c, s))
+            col = push(self.all, Sym(c, s) if(re.search(r"^A-Z", s) is None) else Num(c, s))
 
-            if re.search(r":$", s) == None:         # some columns are skipped
+            if re.search(r":$", s) is None:         # some columns are skipped
                 # some cols are goal cols
-                push(lambda s: self.x if(
-                    re.search(r"!+-", s) == None) else self.y, col)
-            if re.search(r"!$", s) != None:
-                self.klass = col
+                push(self.x if(re.search(r"!+-", s) is None) else self.y, col)
+                if re.search(r"!$", s) is not None:
+                    self.klass = col
