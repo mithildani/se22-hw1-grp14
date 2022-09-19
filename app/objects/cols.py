@@ -19,7 +19,7 @@ class Cols(obj):
         self.x = []                 # independent columns (that are not skipped)
         self.y = []                 # dependent columns (that are not skipped)
 
-        for c, s in self.names:
+        for c, s in enumerate(self.names):
             # Numerics start with Uppercase.
             col = push(self.all, Sym(c, s) if(re.search(r"^A-Z", s) is None) else Num(c, s))
 
