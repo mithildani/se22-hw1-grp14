@@ -1,5 +1,5 @@
-from app.utilities.lists import csv
-from app.utilities.strings import oo
+from app.objects.data import Data
+from app.utilities.strings import o
 
 def test_stats():
     
