@@ -40,4 +40,5 @@ TODO:
 ### Project Dependencies
 - numpy
 - pytest
+- sphinx
 
