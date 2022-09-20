@@ -20,6 +20,10 @@ class Num(obj):
         # check if ending with '-', return -1 if true, 1 otherwise
         self.w = -1 if s.endswith("-") else 1
 
+    def __str__(self):
+        return f"n={self.n},\nat={self.at},\nname={self.name},\nhas={self.has},\n"\
+            f"lo={self.lo},\nhigh={self.high},\nisSorted={self.isSorted},\nw={self.w}"
+
     def nums(self):
         """
         Return kept numbers, sorted.
