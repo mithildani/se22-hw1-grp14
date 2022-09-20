@@ -1,19 +1,6 @@
-""" Lua code
--- ### Lists
-local copy,per,push,csv
--- deepcopy
-function copy(t,    u)
-  if type(t) ~= "table" then return t end
-  u={}; for k,v in pairs(t) do u[k] = copy(v) end
-  return setmetatable(u,getmetatable(t))  end
-
-"""
-# TODO: Write python for above code
-
-
+import csv
 import math
 from copy import deepcopy
-import csv
 from app.utilities.settings import coerce
 
 
