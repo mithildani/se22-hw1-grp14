@@ -6,10 +6,12 @@ from app.utilities.misc import obj
 
 
 class Cols(obj):
+    """
+    -- `Columns` Holds of summaries of columns.
+    -- Columns are created once, then may appear in  multiple slots.
+    """
     def __init__(self, names):
         """
-        -- `Columns` Holds of summaries of columns.
-        -- Columns are created once, then may appear in  multiple slots.
         :param names:
         """
         super().__init__()

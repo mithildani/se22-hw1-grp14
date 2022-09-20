@@ -7,9 +7,12 @@ from app.objects.cols import Cols
 
 
 class Data(obj):
+    """
+    Data is a holder of 'rows' and their summaries (in 'cols')
+    """
     def __init__(self, src):
         """
-        Data is a holder of 'rows' and their summaries (in 'cols')
+        :param src:
         """
         super().__init__()
         self.cols = None                            # summaries of data
@@ -22,8 +25,9 @@ class Data(obj):
                 self.add(row)
 
     def add(self, data):
-        """
-        Add a row to data. Calls add() to  update the cols with new values.
+        """Add a row to data. Calls add() to  update the cols with new values.
+        :param data: a single Row entry
+        :return: None
         """
         if not self.cols:
             self.cols = Cols(data)

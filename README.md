@@ -40,4 +40,5 @@ Files included - README, requirements.txt, Citation, INSTALL.md
 ### Project Dependencies
 - numpy
 - pytest
+- sphinx
 
