@@ -4,7 +4,6 @@ from app.utilities.lists import per
 from app.code import the
 from app.utilities.misc import obj
 
-
 class Num(obj):
     def __init__(self, c: int = 0, s: str = ""):
         """
@@ -20,6 +19,10 @@ class Num(obj):
         self.isSorted = True                        # no updates since last sort of data
         # check if ending with '-', return -1 if true, 1 otherwise
         self.w = -1 if s.endswith("-") else 1
+
+    def __str__(self):
+        return f"n={self.n},\nat={self.at},\nname={self.name},\nhas={self.has},\n"\
+            f"lo={self.lo},\nhigh={self.high},\nisSorted={self.isSorted},\nw={self.w}"
 
     def nums(self):
         """
@@ -40,6 +43,7 @@ class Num(obj):
         :return:
         """
         if v != "?":
+            v = float(v)
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
             self.high = v if v > self.high else self.high
