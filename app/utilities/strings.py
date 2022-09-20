@@ -6,7 +6,7 @@ def o(t):
     def show(k, v):
         if not str(k).startswith("_"):
             v = o(v)
-            return f":{k} {v}" if len(t) == 0 else str(v)
+            return f":{k} {v}" if isinstance(t, dict) else str(v)
 
     if type(t) != dict:
         return str(t)
