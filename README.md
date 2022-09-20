@@ -34,7 +34,10 @@ A self-proclaimed charming good-looking handsome individual who is a Java enthus
 A no-nonsense serious and dedicated prankster / comedian of the group, with an unique knack at solving programming questions and a strong supporter of C++ programming language.  
 
 ## What we do?
-Want to see some magic, we aren't showing any, we are here just to read a csv file. That's it !! That's all we do with our python weapon. 
+Want to see some magic, we aren't showing any, we are here just to read a csv file. That's it !! That's all we do with our python weapon.  
+Files included:
+- [Requirements.txt](https://github.com/mithildani/se22-hw1-grp14/blob/master/requirements.txt)
+- [INSTALL.md](https://github.com/mithildani/se22-hw1-grp14/blob/master/INSTALL.md)
 
 ### Project Dependencies
 - numpy
