@@ -4,7 +4,6 @@ from app.utilities.lists import per
 from app.code import the
 from app.utilities.misc import obj
 
-
 class Num(obj):
     def __init__(self, c: int = 0, s: str = ""):
         """
@@ -40,6 +39,7 @@ class Num(obj):
         :return:
         """
         if v != "?":
+            v = float(v)
             self.n = self.n + 1
             self.lo = v if v < self.lo else self.lo
             self.high = v if v > self.high else self.high

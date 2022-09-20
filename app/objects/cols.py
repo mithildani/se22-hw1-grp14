@@ -21,10 +21,9 @@ class Cols(obj):
 
         for c, s in enumerate(self.names):
             # Numerics start with Uppercase.
-            col = push(self.all, Sym(c, s) if(re.search(r"^A-Z", s) is None) else Num(c, s))
-
+            col = push(self.all, Sym(c, s) if(re.search(r"^[A-Z].*", s) is None) else Num(c, s))
             if re.search(r":$", s) is None:         # some columns are skipped
                 # some cols are goal cols
-                push(self.x if(re.search(r"!+-", s) is None) else self.y, col)
+                push(self.x if(re.search(r".*[!+-]$", s) is None) else self.y, col)
                 if re.search(r"!$", s) is not None:
                     self.klass = col
