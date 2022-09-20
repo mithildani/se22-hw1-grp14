@@ -34,11 +34,16 @@ A self-proclaimed charming good-looking handsome individual who is a Java enthus
 A no-nonsense serious and dedicated prankster / comedian of the group, with an unique knack at solving programming questions and a strong supporter of C++ programming language.  
 
 ## What we do?
-We have created this project using python to read a csv file. We have successfully converted this project from LUA to python.   
-Files included - README, requirements.txt, Citation, INSTALL.md
+Want to see some magic, we aren't showing any, we are here just to read a csv file. That's it !! That's all we do with our python weapon.  
+Files included:
+- [Requirements.txt](https://github.com/mithildani/se22-hw1-grp14/blob/master/requirements.txt)
+- [INSTALL.md](https://github.com/mithildani/se22-hw1-grp14/blob/master/INSTALL.md)
+- [CITATION.md](https://github.com/mithildani/se22-hw1-grp14/blob/master/CITATION.md)
+
+## Working of the project
+So, here is some magic, we use multiple classes and various fucntions that help us magically read the csv file. We are reading the test_file.txt with the objects of the classes num,sym,cols,row and data which take help from from their friend utilities and use small functions to help Roachpack read the test file into a csv. We have also setup a test engine to check whether or not our magic works every time. 
 
 ### Project Dependencies
 - numpy
 - pytest
 - sphinx
-
