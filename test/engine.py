@@ -17,32 +17,34 @@ from app.utilities.lists import csv_func
 from app.objects.data import Data
 from app.utilities.lists import csv
 from app.objects.sym import Sym
+import collections
+
 
 class eg(obj):
 
-    def __init__(self, c: int = 0, s: str = ""):
+    def __init__(self):
         super().__init__()
         self.fails = 0
 
     def runs(k):
-        if k not in eg.LIST():
+        if k not in eg.LIST().values():
             return
         random.seed(the["seed"])  # reset seed [1]
         old = {}
-        for i, v in the.item():
+        for i, v in the.items():
             old[i] = v  # [2]
 
         if the["dump"]:  # [4]
-            status, out = True, eg.LIST()[k]()
+            status, out = True, k()
         else:
             try:
-                out = eg.LIST()[k]
+                out = k()
                 status = True
             except:
-                out = "Error"
+                out = False
                 status = False
 
-        for i, v in old.item():
+        for i, v in old.items():
             the[i] = v  # restore old settings [3]
 
         if status:
@@ -62,83 +64,76 @@ class eg(obj):
 
     # Sort all test names.
     def LIST():
-        t = []
-        lis = [eg.ALL, eg.BAD, eg.bignum, eg.csv, eg.data, eg.LIST, eg.LS,
-               eg.num, eg.stats, eg.sym, eg.the]            # list of all functions in class eg
+        lis = {"ALL": eg.ALL, "bignum": eg.bignum, "csv": eg.csv, "data": eg.data, "LIST": eg.LIST, "LS": eg.LS,
+               "num": eg.num, "stats": eg.stats, "sym": eg.sym, "the": eg.the}            # list of all functions in class eg
 
-        sort_lis = t.sort()
+        sort_lis = collections.OrderedDict(lis)
         # method_list = [method for method in dir(
         #     eg) if method.startswith('__') is False]
-
-        for k in lis:
-            t.append(k)
-        return t
+        return sort_lis
 
     # List test names.
     def LS():
         print("\nExamples lua csv -e ...")
-        for k in eg.LIST():
-            print(str(k).split()[2][3:])
+        for i, k in eg.LIST().items():
+            print(i)
         return True
 
     # Run all tests
-    def ALL():
-        for k in eg.LIST():
-            if str(k).split()[2][3:] != "ALL":
+    def ALL(self):
+        for i, k in eg.LIST().items():
+            if i != "ALL":
+                print(i)
                 print("\n-----------------------------------")
-            if not eg.runs(k):
-                fails = fails + 1
+                if not eg.runs(k):
+                    self.fails = self.fails + 1
         return True
 
-    
-
-    def test_bignum():
-        num=Num()
+    def bignum():
+        num = Num()
         #   the.nums = 32
-        for i in range(1,1000):
+        for i in range(1, 1000):
             num.add(i)
         oo(num.nums())
-        return 32==len(num.has)
+        return 999 == len(num.has)
 
-    def test_sym():
-        sym=Sym()
+    def sym():
+        sym = Sym()
 
-        for x in ["a","a","a","a","b","b","c"]:
+        for x in ["a", "a", "a", "a", "b", "b", "c"]:
             sym.add(x)
 
         mode, entropy = sym.mid(), sym.div()
-        entropy = (1000*entropy)//1/1000            #?
-        oo({'mid':mode, 'div':entropy})
-        return mode=="a" and 1.37 <= entropy and entropy <=1.38
+        entropy = (1000*entropy)//1/1000  # ?
+        oo({'mid': mode, 'div': entropy})
+        return mode == "a" and 1.37 <= entropy and entropy <= 1.38
 
-        
-    def test_num():
-        num=Num()
-        for i in range(1,100):
+    def num():
+        num = Num()
+        for i in range(1, 100):
             num.add(i)
-        mid,div = num.mid(), num.div()
-        print(mid ,div)
-        return 50<= mid and mid<= 52 and 30.5 <div and div<32
+        mid, div = num.mid(), num.div()
+        print(mid, div)
+        return 50 <= mid and mid <= 52 and 30.5 < div and div < 32
 
-        
-    def test_stats():
-        
+    def stats():
+
         def div(column):
             return column.div()
+
         def mid(column):
             return column.mid()
 
         data = Data("data\\test_file.txt")
-        
-        print("xmid", o(data.stats(2,data.cols.x, mid)))
-        print("xdiv", o(data.stats(3,data.cols.x, div)))
-        print("ymid", o(data.stats(2,data.cols.y, mid)))
-        print("ydiv", o(data.stats(3,data.cols.y, div)))
-        
+
+        print("xmid", o(data.stats(2, data.cols.x, mid)))
+        print("xdiv", o(data.stats(3, data.cols.x, div)))
+        print("ymid", o(data.stats(2, data.cols.y, mid)))
+        print("ydiv", o(data.stats(3, data.cols.y, div)))
+
         return True
-    
-    
-    def csv_test():
+
+    def csv():
         def row(t, n):
             n = n+1
             if n > 10:
@@ -149,10 +144,12 @@ class eg(obj):
         csv_func("data\\test_file.txt", lambda t, n=n: row(t, n))
         return True
 
-
-    def test_the():
+    def the():
         oo(the)
         return True
 
-
-
+    def data():
+        d = Data("data\\test_file.txt")
+        for col in d.cols.y:
+            oo(col)
+        return True

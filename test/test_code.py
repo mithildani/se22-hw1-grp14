@@ -1,4 +1,6 @@
-from app.code import sumOfTwoNumbers
+from test.engine import eg
 
-def test_success_sumOfTwoNumbers():
-    assert (5 == sumOfTwoNumbers(2, 3)), "Test case failed!"
+
+def test_success_engine():
+    engine = eg()
+    assert (True == engine.ALL()), "Test case failed!"
