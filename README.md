@@ -42,8 +42,8 @@ Files included:
 
 ## Working of the project
 So, here is some magic, we use multiple classes and various fucntions that help us magically read the csv file. We are reading the test_file.txt with the objects of the classes num,sym,cols,row and data which take help from from their friend utilities and use small functions to help Roachpack read the test file into a csv. We have also setup a test engine to check whether or not our magic works every time. 
+
 ### Project Dependencies
 - numpy
 - pytest
 - sphinx
-
