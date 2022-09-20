@@ -2,8 +2,11 @@
 
 ![This is an image](https://img.shields.io/badge/purpose-Software_Engineering-blue)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7023848.svg)](https://doi.org/10.5281/zenodo.7023848)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Github](https://img.shields.io/badge/language-python-red.svg)](https://docs.python.org/3/)
 [![build](https://github.com/mithildani/se22-hw1-grp14/actions/workflows/test.yml/badge.svg)](https://github.com/mithildani/se22-hw1-grp14/actions)
-
+[![GitHub top language](https://img.shields.io/github/languages/top/mithildani/se22-hw1-grp14)](https://docs.python.org/3/)
+[![GitHub last commit](https://img.shields.io/github/last-commit/mithildani/se22-hw1-grp14)](https://github.com/mithildani/se22-hw1-grp14/commits/main)
 ## RoachPack
 
 Hello! We are a group of Graduate students at NC State University, or to be more specific, we are dreamers who want to be pioneers of the Computer Science world.
@@ -31,11 +34,8 @@ A self-proclaimed charming good-looking handsome individual who is a Java enthus
 A no-nonsense serious and dedicated prankster / comedian of the group, with an unique knack at solving programming questions and a strong supporter of C++ programming language.  
 
 ## What we do?
-TODO:
--- about project  
--- which language
--- files included - README, requirements, Citation
--- future plans
+We have created this project using python to read a csv file. We have successfully converted this project from LUA to python.   
+Files included - README, requirements.txt, Citation, INSTALL.md
 
 ### Project Dependencies
 - numpy
