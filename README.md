@@ -34,8 +34,7 @@ A self-proclaimed charming good-looking handsome individual who is a Java enthus
 A no-nonsense serious and dedicated prankster / comedian of the group, with an unique knack at solving programming questions and a strong supporter of C++ programming language.  
 
 ## What we do?
-We have created this project using python to read a csv file. We have successfully converted this project from LUA to python.   
-Files included - README, requirements.txt, Citation, INSTALL.md
+Want to see some magic, we aren't showing any, we are here just to read a csv file. That's it !! That's all we do with our python weapon. 
 
 ### Project Dependencies
 - numpy
