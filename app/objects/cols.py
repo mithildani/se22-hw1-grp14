@@ -6,10 +6,12 @@ from app.utilities.misc import obj
 
 
 class Cols(obj):
+    """
+    -- `Columns` Holds of summaries of columns.
+    -- Columns are created once, then may appear in  multiple slots.
+    """
     def __init__(self, names):
         """
-        -- `Columns` Holds of summaries of columns.
-        -- Columns are created once, then may appear in  multiple slots.
         :param names:
         """
         super().__init__()
@@ -19,12 +21,11 @@ class Cols(obj):
         self.x = []                 # independent columns (that are not skipped)
         self.y = []                 # dependent columns (that are not skipped)
 
-        for c, s in self.names:
+        for c, s in enumerate(self.names):
             # Numerics start with Uppercase.
-            col = push(self.all, Sym(c, s) if(re.search(r"^A-Z", s) is None) else Num(c, s))
-
+            col = push(self.all, Sym(c, s) if(re.search(r"^[A-Z].*", s) is None) else Num(c, s))
             if re.search(r":$", s) is None:         # some columns are skipped
                 # some cols are goal cols
-                push(self.x if(re.search(r"!+-", s) is None) else self.y, col)
+                push(self.x if(re.search(r".*[!+-]$", s) is None) else self.y, col)
                 if re.search(r"!$", s) is not None:
                     self.klass = col

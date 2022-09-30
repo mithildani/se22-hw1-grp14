@@ -5,7 +5,7 @@ def sumOfTwoNumbers(num1, num2):
     return num1 + num2
 
 # the = cli(the)
-the={"nums":1000}
+the={"nums":1000, "seed":8, "dump": False}
 
 """
 -- ---------------------------------

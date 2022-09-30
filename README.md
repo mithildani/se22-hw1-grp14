@@ -1,24 +1,49 @@
-## 🪲  RoachPack
-
-SE Fall 2022 Homework 1 project
+# SE Fall 2022 Homework 1-5 
 
 ![This is an image](https://img.shields.io/badge/purpose-Software_Engineering-blue)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7023848.svg)](https://doi.org/10.5281/zenodo.7023848)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Github](https://img.shields.io/badge/language-python-red.svg)](https://docs.python.org/3/)
 [![build](https://github.com/mithildani/se22-hw1-grp14/actions/workflows/test.yml/badge.svg)](https://github.com/mithildani/se22-hw1-grp14/actions)
+[![GitHub top language](https://img.shields.io/github/languages/top/mithildani/se22-hw1-grp14)](https://docs.python.org/3/)
+[![GitHub last commit](https://img.shields.io/github/last-commit/mithildani/se22-hw1-grp14)](https://github.com/mithildani/se22-hw1-grp14/commits/main)
+## RoachPack
 
+Hello! We are a group of Graduate students at NC State University, or to be more specific, we are dreamers who want to be pioneers of the Computer Science world.
+Consider this homework to be one of our many steps at achieving our dreams! :wink:  
 
-## Dependencies
+### Why RoachPack?
+Good question!  
+We are international students, visiting the United States for the first time. We all live near the Centinnial campus of NC State University.  
+Our eyes ready to take in the grandeur and technological advancements of the United States, we were rather welcomed by a group of Anthropods which we all are afraid of.  
+Yup, you guessed it right. Cockroaches!  
+To overcome this fear and to take on challenges, we have named our group **RoachPack**! :muscle:
+
+## Meet our team
+- [@MithilDani](https://www.github.com/mithildani)
+A studious nearsighted bespectacled charming individual who is an expert at building Django applications, designing optimal solutions and has an extensive work experience of 2 years in the IT industry.  
+He is also our group liaison! :sunglasses:
+- [@NehaKale](https://www.github.com/nehakale8)
+A hardworking bespectacled Machine Learning expert who has multiple AI and ML projects and research papers contributions. She is an expert at providing out-of-box solutions and always has an unique perspective.  
+She also provides our group with the much needed diversity :sweat_smile:  
+- [@RishikeshYelne](https://www.github.com/rishikesh-yelne)
+An old, very old, almost ancient bespectacled individual (so many bespectacled members :nerd_face:) with a work experience of 5 years in the IT industry. He is proficient and well-versed with the .NET Framework, which he claims to be highly relevant and at par with the newer technologies. Let's just respect his ancient age and agree with him for now. *-laughs in Python-*
+- [@VanshMehta](https://github.com/vanshmehta-7)
+A self-proclaimed charming good-looking handsome individual who is a Java enthusiast. A constant source of good jokes and efficient code, he has charmed his way into our group, just like Shah Rukh Khan does it in Bollywood movies.
+- [@RitwikVaidya](https://www.github.com/ritwik4690)
+A no-nonsense serious and dedicated prankster / comedian of the group, with an unique knack at solving programming questions and a strong supporter of C++ programming language.  
+
+## What we do?
+Want to see some magic, we aren't showing any, we are here just to read a csv file. That's it !! That's all we do with our python weapon.  
+Files included:
+- [Requirements.txt](https://github.com/mithildani/se22-hw1-grp14/blob/master/requirements.txt)
+- [INSTALL.md](https://github.com/mithildani/se22-hw1-grp14/blob/master/INSTALL.md)
+- [CITATION.md](https://github.com/mithildani/se22-hw1-grp14/blob/master/CITATION.md)
+
+## Working of the project
+So, here is some magic, we use multiple classes and various fucntions that help us magically read the csv file. We are reading the test_file.txt with the objects of the classes num,sym,cols,row and data which take help from from their friend utilities and use small functions to help Roachpack read the test file into a csv. We have also setup a test engine to check whether or not our magic works every time. 
+
+### Project Dependencies
 - numpy
 - pytest
-
-## Authors
-
-- [@MithilDani](https://www.github.com/mithildani)
-- [@NehaKale](https://www.github.com/nehakale8)
-- [@RishikeshYelne](https://www.github.com/rishikesh-yelne)
-- [@VanshMehta](https://github.com/vanshmehta-7)
-- [@RitwikVaidya](https://www.github.com/ritwik4690)
-
-## About this Project
-- 
-
+- sphinx
