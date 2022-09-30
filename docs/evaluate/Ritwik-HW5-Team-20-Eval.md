@@ -32,7 +32,7 @@ NOTE: Software Sustainability Evaluation skipped for the current project as disc
 |Use of style checkers | 0 |
 |Use of code formatters. | 0 |
 |Use of syntax checkers. | 0 |
-|Use of code coverage | 3 (76% Coverage - [CodeCov](https://github.com/subodh30/se22_grp20_hw2345/blob/master/src/main/resources/CodeCoverage.png)) |
+|Use of code coverage | 1 (76% Coverage - Static PNG instead of link) |
 |Other automated analysis tools| 2 |
 |Test cases exist| 3 |
 |Test cases are routinely executed| 3 | 
