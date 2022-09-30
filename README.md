@@ -1,4 +1,4 @@
-## RoachPack
+## 🪲  RoachPack
 
 SE Fall 2022 Homework 1 project
 
@@ -18,4 +18,7 @@ SE Fall 2022 Homework 1 project
 - [@RishikeshYelne](https://www.github.com/rishikesh-yelne)
 - [@VanshMehta](https://github.com/vanshmehta-7)
 - [@RitwikVaidya](https://www.github.com/ritwik4690)
+
+## About this Project
+- 
 
