@@ -33,15 +33,15 @@ NOTE: Software Sustainability Evaluation skipped for the current project as disc
 |Use of code formatters. | 0 |
 |Use of syntax checkers. | 0 |
 |Use of code coverage | 3 (76% Coverage - [CodeCov](https://github.com/subodh30/se22_grp20_hw2345/blob/master/src/main/resources/CodeCoverage.png)) |
-|Other automated analysis tools| 0 |
+|Other automated analysis tools| 2 |
 |Test cases exist| 3 |
 |Test cases are routinely executed| 3 | 
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 2 |
 |Issues are discussed before they are closed| 1 |
 |Chat channel: exists| 0 |
-|Test cases: a large proportion of the issues related to handling failing cases.| 0 |
+|Test cases: a large proportion of the issues related to handling failing cases.| 2 |
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 |
-|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 2 |
+|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 1 |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 3 |
 |Evidence that the members of the team are working across multiple places in the code base| 3 |
 |Short release cycles | 3 |
